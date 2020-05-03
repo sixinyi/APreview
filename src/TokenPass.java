@@ -9,7 +9,11 @@ public class TokenPass {
      * @param playerCount the number of players
      */
     public TokenPass(int playerCount) {
-
+        board = new int[playerCount];
+        for(int n = 0; n < board.length; n++){
+            board[n] = (int)(Math.random() * 9) + 1;
+        }
+        currentPlayer = (int)(Math.random() * playerCount);
     }
 
     /** Distributes the tokens from the current player's position one at a time to each player in
@@ -20,8 +24,18 @@ public class TokenPass {
      * Postcondition: the current player has not changed.
      */
     public void distributeCurrentPlayerTokens() {
-
-
+        int cot = currentPlayer;
+        while(board[currentPlayer] != 1){
+            if(cot == board.length - 1)
+                cot = 0;
+            else
+                cot++;
+            board[cot]++;
+            board[currentPlayer]--;
+        }
     }
-
+    public int[]getBoard(){return board;}
+    public void setBoard(int[] ary){board = ary;}
+    public int getCurrentPlayer(){return currentPlayer;}
+    public void setCurrentPlayer(int i){currentPlayer = i;}
 }
