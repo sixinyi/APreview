@@ -15,7 +15,7 @@ public class Combinatorics {
      (b). */
     public static void numCombinations(int n, int r) {
         if(r > n)
-            System.out.println("choose o "+r+" in "+n+" choices.");
+            System.out.println("choose 0 of "+r+" in "+n+" choices.");
         else{
             int com = factorial(n)/(factorial(r) * factorial(n-r));
             System.out.println(com+" choose "+r+" in "+n+" choices.");
