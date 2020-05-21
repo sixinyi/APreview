@@ -12,7 +12,7 @@ public class SpinnerGame {
     public void playRound() {
         int rum = 0;
         boolean tie = true;
-        while(rum < 2 && tie) {
+        while(rum < 2 && tie == true) {
             int psp = spin(1, 10);
             int csp = spin(2, 9);
             int dif;
@@ -27,7 +27,7 @@ public class SpinnerGame {
             }
             psp++;
         }
-        if(tie)
+        if(tie == true)
             System.out.println("Tie. 0 points");
 
     }
